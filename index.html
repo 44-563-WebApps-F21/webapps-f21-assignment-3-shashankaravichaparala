@@ -77,5 +77,65 @@
             <td>$1.44</td>
         </tr>
     </table>
+    <hr>
+    
+    <h1>Algorithm</h1>
+    <h3>Queue algorithm form Data Structure</h3>
+
+    <blockquote cite="https://en.wikipedia.org/wiki/Priority_queue">
+
+        In computer science, a priority queue is an abstract data type similar to a regular queue or stack data
+        structure in which each element additionally has a "priority" associated with it. In a priority queue, an
+        element with high priority is served before an element with low priority. In some implementations, if two
+        elements have the same priority, they are served according to the order in which they were enqueued, while in
+        other implementations, ordering of elements with the same priority is undefined.
+    </blockquote>
+    <p> <a href="https://en.wikipedia.org/wiki/Priority_queue"> Priority Queue Data Structure algorithm
+            Reference_link</a></p>
+
+    <pre>
+    insert(node) {
+        list.append(node)
+      }
+      </pre>
+
+    <pre>
+      pull() {
+        highest = list.get_first_element()
+        foreach node in list {
+           if highest.priority < node.priority {
+               highest = node
+           }
+        }
+        list.remove(highest)
+        return highest
+      }
+    </pre>
+
+    <p>In another case, one can keep all the elements in a priority sorted list (O(n) insertion sort time ), whenever
+        the highest-priority element is requested, the first one in the list can be returned. ( O(1) pull time )</p>
+
+    <pre>
+      insert(node) {
+        highest = list.get_first_element()
+        foreach (index, element) in list {
+          if node.priority < element.priority {
+             list.insert_at_index(node,index)
+          }
+        }
+      }
+    </pre>
+
+    <pre>
+    pull() {
+    highest = list.get_at_index(list.length-1)
+    list.remove(highest)
+    return highest
+    }
+    </pre>
+    <p> <a href="https://cp-algorithms.com/data_structures/stack_queue_modification.html"> Priority Queue Data Structure
+            algorithm Code Reference_link</a></p>
+
+
 </body>
 </html>
